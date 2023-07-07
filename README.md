@@ -1,4 +1,7 @@
 # Eventz
+
+**Still in development** ⚠️
+
 ## This is an application developed for people who love to go to events.
 
 ### About the project 
@@ -15,3 +18,5 @@ The project was developed entirely programmatically and using MVC Design Pattern
 - Firebase
 
 ### 📸 Screenshots of the application 
+<img width="1263" alt="Screenshots" src="https://github.com/caiiocasttro/Eventz/assets/104564732/67aa2494-1992-4968-a2a8-4dfaf5b79f10">
+
