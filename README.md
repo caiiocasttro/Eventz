@@ -18,5 +18,5 @@ The project was developed entirely programmatically and using MVC Design Pattern
 - Firebase
 
 ### 📸 Screenshots of the application 
-<img width="1263" alt="Screenshots" src="https://github.com/caiiocasttro/Eventz/assets/104564732/67aa2494-1992-4968-a2a8-4dfaf5b79f10">
 
+<img width="956" alt="Screenshots V2" src="https://github.com/caiiocasttro/Eventz/assets/104564732/0e36095d-4fa9-4e0e-9ba2-a13fc81b8c90">
