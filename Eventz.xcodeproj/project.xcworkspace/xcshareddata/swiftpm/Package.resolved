@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "alignedcollectionview?ref=iosexample.com",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Kolosowski/AlignedCollectionView?ref=iosexample.com",
+      "state" : {
+        "revision" : "7e7cc689e96f34f0640999afc0311bfc9747ad74",
+        "version" : "1.1.2"
+      }
+    }
+  ],
+  "version" : 2
+}
