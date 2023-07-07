@@ -25,6 +25,5 @@ The project was developed entirely programmatically and using MVC Design Pattern
 
 <img width="1680" alt="Screenshot 2023-07-07 at 9 03 45 PM" src="https://github.com/caiiocasttro/Eventz/assets/104564732/fedfeb49-c2dc-4046-b3fb-c72c509b3b18">
 
-
 ![Eventz screenshot IV](https://github.com/caiiocasttro/Eventz/assets/104564732/0e6e55fd-f688-4b1a-a703-82f40a663817)
 
