@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Kolosowski/AlignedCollectionView?ref=iosexample.com",
       "state" : {
-        "revision" : "7e7cc689e96f34f0640999afc0311bfc9747ad74",
-        "version" : "1.1.2"
+        "revision" : "7e9606e344bec5de022a7955f9b948ed3bb09c3b",
+        "version" : "1.0.0"
       }
     }
   ],

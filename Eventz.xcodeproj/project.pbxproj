@@ -15,11 +15,8 @@
 		E55335522A4198EA00FB5E2B /* ResetPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55335512A4198EA00FB5E2B /* ResetPassword.swift */; };
 		E55335542A4198FF00FB5E2B /* CreateNewPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55335532A4198FF00FB5E2B /* CreateNewPassword.swift */; };
 		E55335562A41992600FB5E2B /* PasswordUpdated.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55335552A41992600FB5E2B /* PasswordUpdated.swift */; };
-		E567BFEE2A4352F400668FE1 /* InterestPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E567BFED2A4352F400668FE1 /* InterestPage.swift */; };
 		E567BFF02A444D4700668FE1 /* CardsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E567BFEF2A444D4700668FE1 /* CardsCell.swift */; };
 		E567BFF22A4472C300668FE1 /* HomePageHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E567BFF12A4472C200668FE1 /* HomePageHeader.swift */; };
-		E57525B52A38BFFD00484F09 /* InterestsPageHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57525B42A38BFFD00484F09 /* InterestsPageHeader.swift */; };
-		E57525B82A38D20200484F09 /* InterestsButtonsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57525B72A38D20200484F09 /* InterestsButtonsCell.swift */; };
 		E585A2B62A2E10B700354519 /* SignUpScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E585A2B52A2E10B700354519 /* SignUpScreen.swift */; };
 		E58EBF842A4DC01000DA18ED /* ReviewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58EBF832A4DC01000DA18ED /* ReviewsCell.swift */; };
 		E58EBF862A4DD18100DA18ED /* EventsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58EBF852A4DD17F00DA18ED /* EventsPage.swift */; };
@@ -39,7 +36,6 @@
 		E5CFE9DE2A289DD00027C3E1 /* SignInScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CFE9DD2A289DD00027C3E1 /* SignInScreen.swift */; };
 		E5DF11B92A308154002CF079 /* TermsOfConditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DF11B82A308154002CF079 /* TermsOfConditions.swift */; };
 		E5DF11BB2A30CE1C002CF079 /* LocationPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DF11BA2A30CE1C002CF079 /* LocationPage.swift */; };
-		E5DF11BD2A30CE35002CF079 /* InterestsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DF11BC2A30CE35002CF079 /* InterestsPage.swift */; };
 		E5E6FB412A51AAC10011C032 /* FavoritePageHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E6FB402A51AAC10011C032 /* FavoritePageHeader.swift */; };
 		E5EB0B2F2A4A05BA00B0904B /* cardsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EB0B2E2A4A05B900B0904B /* cardsModel.swift */; };
 /* End PBXBuildFile section */
@@ -53,11 +49,8 @@
 		E55335512A4198EA00FB5E2B /* ResetPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPassword.swift; sourceTree = "<group>"; };
 		E55335532A4198FF00FB5E2B /* CreateNewPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewPassword.swift; sourceTree = "<group>"; };
 		E55335552A41992600FB5E2B /* PasswordUpdated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordUpdated.swift; sourceTree = "<group>"; };
-		E567BFED2A4352F400668FE1 /* InterestPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestPage.swift; sourceTree = "<group>"; };
 		E567BFEF2A444D4700668FE1 /* CardsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsCell.swift; sourceTree = "<group>"; };
 		E567BFF12A4472C200668FE1 /* HomePageHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageHeader.swift; sourceTree = "<group>"; };
-		E57525B42A38BFFD00484F09 /* InterestsPageHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestsPageHeader.swift; sourceTree = "<group>"; };
-		E57525B72A38D20200484F09 /* InterestsButtonsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestsButtonsCell.swift; sourceTree = "<group>"; };
 		E585A2B52A2E10B700354519 /* SignUpScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreen.swift; sourceTree = "<group>"; };
 		E58EBF832A4DC01000DA18ED /* ReviewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsCell.swift; sourceTree = "<group>"; };
 		E58EBF852A4DD17F00DA18ED /* EventsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsPage.swift; sourceTree = "<group>"; };
@@ -78,7 +71,6 @@
 		E5CFE9DD2A289DD00027C3E1 /* SignInScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SignInScreen.swift; path = "../New Group1/SignInScreen.swift"; sourceTree = "<group>"; };
 		E5DF11B82A308154002CF079 /* TermsOfConditions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsOfConditions.swift; sourceTree = "<group>"; };
 		E5DF11BA2A30CE1C002CF079 /* LocationPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LocationPage.swift; path = "../New Group2/LocationPage.swift"; sourceTree = "<group>"; };
-		E5DF11BC2A30CE35002CF079 /* InterestsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InterestsPage.swift; path = "../New Group/InterestsPage.swift"; sourceTree = "<group>"; };
 		E5E6FB402A51AAC10011C032 /* FavoritePageHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePageHeader.swift; sourceTree = "<group>"; };
 		E5EB0B2E2A4A05B900B0904B /* cardsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cardsModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -103,17 +95,6 @@
 				E55335552A41992600FB5E2B /* PasswordUpdated.swift */,
 			);
 			path = "Reset Password";
-			sourceTree = "<group>";
-		};
-		E57525B62A38D1CD00484F09 /* IInterestsPage */ = {
-			isa = PBXGroup;
-			children = (
-				E5DF11BC2A30CE35002CF079 /* InterestsPage.swift */,
-				E57525B42A38BFFD00484F09 /* InterestsPageHeader.swift */,
-				E57525B72A38D20200484F09 /* InterestsButtonsCell.swift */,
-				E567BFED2A4352F400668FE1 /* InterestPage.swift */,
-			);
-			path = IInterestsPage;
 			sourceTree = "<group>";
 		};
 		E57DD7FC2A53060000972068 /* Event page  */ = {
@@ -195,7 +176,6 @@
 				E55335502A4198B200FB5E2B /* Reset Password */,
 				E57DD7FE2A5306A100972068 /* Sign Up Page */,
 				E57DD8012A5306FD00972068 /* Location Page */,
-				E57525B62A38D1CD00484F09 /* IInterestsPage */,
 				E5C1AFD42A3B6EB300FBBFE0 /* WelcomePage.swift */,
 			);
 			path = Onboarding;
@@ -343,10 +323,8 @@
 			files = (
 				E5A242862A274A070007A716 /* AppDelegate.swift in Sources */,
 				E5CFE9DE2A289DD00027C3E1 /* SignInScreen.swift in Sources */,
-				E5DF11BD2A30CE35002CF079 /* InterestsPage.swift in Sources */,
 				E55335542A4198FF00FB5E2B /* CreateNewPassword.swift in Sources */,
 				E5C1AFD72A3CACF200FBBFE0 /* ReusableComponents.swift in Sources */,
-				E57525B82A38D20200484F09 /* InterestsButtonsCell.swift in Sources */,
 				E5CFE9D72A2771930027C3E1 /* WelcomeScreen.swift in Sources */,
 				E567BFF02A444D4700668FE1 /* CardsCell.swift in Sources */,
 				E58EBF862A4DD18100DA18ED /* EventsPage.swift in Sources */,
@@ -363,7 +341,6 @@
 				E5C1AFD92A3D14C900FBBFE0 /* Protocols.swift in Sources */,
 				E5A242882A274A070007A716 /* SceneDelegate.swift in Sources */,
 				E5C1AFD52A3B6EB300FBBFE0 /* WelcomePage.swift in Sources */,
-				E567BFEE2A4352F400668FE1 /* InterestPage.swift in Sources */,
 				E5305B592A51B03F0085C2FB /* MiniCardsCell.swift in Sources */,
 				E55335562A41992600FB5E2B /* PasswordUpdated.swift in Sources */,
 				E55335522A4198EA00FB5E2B /* ResetPassword.swift in Sources */,
@@ -371,7 +348,6 @@
 				E58EBF8A2A4E072F00DA18ED /* EventsPageFooter.swift in Sources */,
 				E585A2B62A2E10B700354519 /* SignUpScreen.swift in Sources */,
 				E54CF1E62A42EF8400D1F88B /* HomePage.swift in Sources */,
-				E57525B52A38BFFD00484F09 /* InterestsPageHeader.swift in Sources */,
 				E5E6FB412A51AAC10011C032 /* FavoritePageHeader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
