@@ -19,11 +19,10 @@ The project was developed entirely programmatically and using MVC Design Pattern
 
 ### 📸 Screenshots of the application 
 
-![Eventz screenshot I](https://github.com/caiiocasttro/Eventz/assets/104564732/94a23e9d-36dd-4f71-bc04-15d2ceb27b13)
+![Eventz screenshot I](https://github.com/caiiocasttro/Eventz/assets/104564732/cc92fc5a-14ce-4915-881c-ffc1de1d9f30)
 
-![Eventz screenshot II](https://github.com/caiiocasttro/Eventz/assets/104564732/7cebf659-abea-415e-b53f-22bd20799c5f)
+![Eventz screenshot II](https://github.com/caiiocasttro/Eventz/assets/104564732/59b94fa7-f20f-4b20-ab50-df0e1650076b)
 
-<img width="1680" alt="Screenshot 2023-07-07 at 9 03 45 PM" src="https://github.com/caiiocasttro/Eventz/assets/104564732/fedfeb49-c2dc-4046-b3fb-c72c509b3b18">
+![Eventz screenshot III](https://github.com/caiiocasttro/Eventz/assets/104564732/e843b3e7-37d5-49d7-b83a-a2813c0863f9)
 
-![Eventz screenshot IV](https://github.com/caiiocasttro/Eventz/assets/104564732/0e6e55fd-f688-4b1a-a703-82f40a663817)
-
+![Eventz screenshot IV](https://github.com/caiiocasttro/Eventz/assets/104564732/7e9a0531-431c-4f77-9668-7449fd149773)
