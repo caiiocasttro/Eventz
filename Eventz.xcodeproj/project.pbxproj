@@ -26,7 +26,6 @@
 		E5A242882A274A070007A716 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A242872A274A070007A716 /* SceneDelegate.swift */; };
 		E5A2428F2A274A0A0007A716 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5A2428E2A274A0A0007A716 /* Assets.xcassets */; };
 		E5A242922A274A0A0007A716 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5A242902A274A0A0007A716 /* LaunchScreen.storyboard */; };
-		E5C1AFD32A39F69A00FBBFE0 /* AlignedCollectionView in Frameworks */ = {isa = PBXBuildFile; productRef = E5C1AFD22A39F69A00FBBFE0 /* AlignedCollectionView */; };
 		E5C1AFD52A3B6EB300FBBFE0 /* WelcomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C1AFD42A3B6EB300FBBFE0 /* WelcomePage.swift */; };
 		E5C1AFD72A3CACF200FBBFE0 /* ReusableComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C1AFD62A3CACF200FBBFE0 /* ReusableComponents.swift */; };
 		E5C1AFD92A3D14C900FBBFE0 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C1AFD82A3D14C800FBBFE0 /* Protocols.swift */; };
@@ -80,13 +79,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E5C1AFD32A39F69A00FBBFE0 /* AlignedCollectionView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E51ED8F32A6BFFD600FE1F43 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E5A242852A274A070007A716 /* AppDelegate.swift */,
+				E5A242872A274A070007A716 /* SceneDelegate.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		E55335502A4198B200FB5E2B /* Reset Password */ = {
 			isa = PBXGroup;
 			children = (
@@ -101,8 +108,6 @@
 			isa = PBXGroup;
 			children = (
 				E58EBF852A4DD17F00DA18ED /* EventsPage.swift */,
-				E58EBF872A4DD1B000DA18ED /* EventsPageHeader.swift */,
-				E58EBF892A4E072F00DA18ED /* EventsPageFooter.swift */,
 			);
 			path = "Event page ";
 			sourceTree = "<group>";
@@ -110,7 +115,6 @@
 		E57DD7FD2A53064700972068 /* Review Page */ = {
 			isa = PBXGroup;
 			children = (
-				E58EBF832A4DC01000DA18ED /* ReviewsCell.swift */,
 			);
 			path = "Review Page";
 			sourceTree = "<group>";
@@ -159,6 +163,7 @@
 		E5A242842A274A070007A716 /* Eventz */ = {
 			isa = PBXGroup;
 			children = (
+				E51ED8F32A6BFFD600FE1F43 /* Resources */,
 				E5CFE9DA2A289D1B0027C3E1 /* Model */,
 				E5CFE9DC2A289D320027C3E1 /* View */,
 				E5CFE9DB2A289D2A0027C3E1 /* Controller */,
@@ -187,8 +192,6 @@
 				E5C83A762A41FC100022D8BB /* FirstScreen.swift */,
 				E54CF1DF2A42EF0800D1F88B /* TabBarController.swift */,
 				E54CF1E52A42EF8400D1F88B /* HomePage.swift */,
-				E567BFF12A4472C200668FE1 /* HomePageHeader.swift */,
-				E567BFEF2A444D4700668FE1 /* CardsCell.swift */,
 			);
 			path = "Home Page";
 			sourceTree = "<group>";
@@ -197,8 +200,6 @@
 			isa = PBXGroup;
 			children = (
 				E54CF1E32A42EF4000D1F88B /* FavoritePage.swift */,
-				E5E6FB402A51AAC10011C032 /* FavoritePageHeader.swift */,
-				E5305B582A51B03F0085C2FB /* MiniCardsCell.swift */,
 			);
 			path = "Favorite Page";
 			sourceTree = "<group>";
@@ -214,8 +215,6 @@
 		E5CFE9DA2A289D1B0027C3E1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				E5A242852A274A070007A716 /* AppDelegate.swift */,
-				E5A242872A274A070007A716 /* SceneDelegate.swift */,
 				E5C1AFD62A3CACF200FBBFE0 /* ReusableComponents.swift */,
 				E5C1AFD82A3D14C800FBBFE0 /* Protocols.swift */,
 				E5EB0B2E2A4A05B900B0904B /* cardsModel.swift */,
@@ -239,6 +238,13 @@
 		E5CFE9DC2A289D320027C3E1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E567BFF12A4472C200668FE1 /* HomePageHeader.swift */,
+				E567BFEF2A444D4700668FE1 /* CardsCell.swift */,
+				E58EBF872A4DD1B000DA18ED /* EventsPageHeader.swift */,
+				E58EBF892A4E072F00DA18ED /* EventsPageFooter.swift */,
+				E58EBF832A4DC01000DA18ED /* ReviewsCell.swift */,
+				E5E6FB402A51AAC10011C032 /* FavoritePageHeader.swift */,
+				E5305B582A51B03F0085C2FB /* MiniCardsCell.swift */,
 				E5A2428E2A274A0A0007A716 /* Assets.xcassets */,
 				E5A242902A274A0A0007A716 /* LaunchScreen.storyboard */,
 			);
@@ -262,7 +268,6 @@
 			);
 			name = Eventz;
 			packageProductDependencies = (
-				E5C1AFD22A39F69A00FBBFE0 /* AlignedCollectionView */,
 			);
 			productName = Eventz;
 			productReference = E5A242822A274A070007A716 /* Eventz.app */;
@@ -575,14 +580,6 @@
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		E5C1AFD22A39F69A00FBBFE0 /* AlignedCollectionView */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = E5C1AFD12A39F69900FBBFE0 /* XCRemoteSwiftPackageReference "AlignedCollectionView" */;
-			productName = AlignedCollectionView;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E5A2427A2A274A070007A716 /* Project object */;
 }
