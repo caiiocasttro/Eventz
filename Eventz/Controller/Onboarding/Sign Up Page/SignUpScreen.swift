@@ -12,9 +12,6 @@ import UIKit
 class SignUpScreen: UIViewController, TermsOfConditionsDelegate {
     
     //MARK: Initializers
-    lazy var reusableButtons = ReusableButtons()
-    
-    lazy var reusableFunctions = ReusableFunctions()
 
     lazy var nameTextField = textFieldCustom()
     

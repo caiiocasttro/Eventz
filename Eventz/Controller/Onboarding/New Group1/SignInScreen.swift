@@ -8,16 +8,14 @@
 import SafariServices
 import UIKit
 
+
 class SignInScreen: UIViewController {
 
     //MARK: Initializers
-    lazy var reusableButtons = ReusableButtons()
-    
-    lazy var reusableFunctions = ReusableFunctions()
 
     lazy var emailTextField = textFieldCustom()
     
-    public lazy var passTextField = textFieldCustom()
+    lazy var passTextField = textFieldCustom()
     
     lazy var securityTextFieldSignIn = securityTextFieldButton()
     
@@ -48,7 +46,6 @@ class SignInScreen: UIViewController {
         label.font = .systemFont(ofSize: 12, weight: .bold)
         return label
     }()
-    
     
     private lazy var logInFacebook: UIButton = {
         let button = UIButton()
