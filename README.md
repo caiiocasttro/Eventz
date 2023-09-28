@@ -15,14 +15,10 @@ The project was developed entirely programmatically and using MVC Design Pattern
 - Xcode 
 - Swift
 - Figma
-- Firebase
+- EventKit
 
 ### 📸 Screenshots of the application 
 
-![Eventz screenshot I](https://github.com/caiiocasttro/Eventz/assets/104564732/cc92fc5a-14ce-4915-881c-ffc1de1d9f30)
+![Eventz I](https://github.com/caiiocasttro/Eventz/assets/104564732/b63c95c8-93d5-4254-af05-ad286f66fa58)
 
-![Eventz screenshot II](https://github.com/caiiocasttro/Eventz/assets/104564732/59b94fa7-f20f-4b20-ab50-df0e1650076b)
-
-![Eventz screenshot III](https://github.com/caiiocasttro/Eventz/assets/104564732/e843b3e7-37d5-49d7-b83a-a2813c0863f9)
-
-![Eventz screenshot IV](https://github.com/caiiocasttro/Eventz/assets/104564732/7e9a0531-431c-4f77-9668-7449fd149773)
+![Eventz II](https://github.com/caiiocasttro/Eventz/assets/104564732/2537736c-fe2d-4b7b-9fe9-0c6da269fa82)
