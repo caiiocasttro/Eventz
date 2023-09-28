@@ -7,10 +7,10 @@
 
 import Foundation
 
-// Protocol created to use the accept button inside the sheet
-protocol TermsOfConditionsDelegate {
-    func acceptDidTapped(view: LocationPage)
-}
+//// Protocol created to use the accept button inside the sheet
+//protocol TermsOfConditionsDelegate {
+//    func acceptDidTapped(view: LocationPage)
+//}
 
 //Protocol createed to align the UICollectionViewCells
 protocol CollectionCellAutoLayout: AnyObject {
