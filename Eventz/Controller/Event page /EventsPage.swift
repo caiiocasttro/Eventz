@@ -19,21 +19,15 @@ class EventsPage: UIViewController {
     let eventVC = EKEventEditViewController()
     
     //MARK: Properties
-   public var image: String?
+    public var image: String?
     
-   public var name: String?
+    public var name: String?
     
-   public var city: String?
+    public var city: String?
     
     public var date: String?
     
     private var collectionView: UICollectionView!
-    
-    private var headerIdentifier = "EventsPageHeader"
-    
-    private var cellIdentifier = "reviewsCell"
-    
-    private var footerIdentifier = "EventsPageFooter"
     
     private var plusButton: UIBarButtonItem = {
         let button = UIBarButtonItem()
@@ -58,14 +52,14 @@ class EventsPage: UIViewController {
         line.image = UIImage(named: "Line")?.withTintColor(UIColor(named: "Aux4") ?? UIColor.lightGray)
         return line
     }()
-
+    
     //MARK: Page lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
         configureLayout()
-
+        
         
     }
     
@@ -89,7 +83,6 @@ class EventsPage: UIViewController {
         let group = NSCollectionLayoutGroup.vertical(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .estimated(114)), subitems: [item])
         //Section
         let section = NSCollectionLayoutSection(group: group)
-//        section.interGroupSpacing = 30
         section.supplementaryContentInsetsReference = .none
         section.boundarySupplementaryItems = [configureHeader(), configureFooter()]
         
@@ -104,7 +97,7 @@ class EventsPage: UIViewController {
     private func configureFooter() -> NSCollectionLayoutBoundarySupplementaryItem {
         .init(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .estimated(50)), elementKind: UICollectionView.elementKindSectionFooter, alignment: .bottom)
     }
-
+    
     //MARK: Configuring layout
     private func configureLayout() {
         //View Background
@@ -127,11 +120,11 @@ class EventsPage: UIViewController {
         
         self.collectionView.isScrollEnabled = true
         
-        self.collectionView.register(EventsPageHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerIdentifier)
+        self.collectionView.register(EventsPageHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: EventsPageIdentifier.header.rawValue)
         
-        self.collectionView.register(ReviewsCell.self, forCellWithReuseIdentifier: cellIdentifier)
+        self.collectionView.register(ReviewsCell.self, forCellWithReuseIdentifier: EventsPageIdentifier.review.rawValue)
         
-        self.collectionView.register(EventsPageFooter.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: footerIdentifier)
+        self.collectionView.register(EventsPageFooter.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: EventsPageIdentifier.footer.rawValue)
         
         //Adding subview
         view.addSubview(collectionView)
@@ -147,7 +140,7 @@ class EventsPage: UIViewController {
         //Adding constraints
         NSLayoutConstraint.activate([
             
-          //Footer
+            //Footer
             footerButton.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             footerButton.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             footerButton.bottomAnchor.constraint(equalTo: view.bottomAnchor),
@@ -158,7 +151,7 @@ class EventsPage: UIViewController {
             line.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             line.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             
-        //Add to calendar button
+            //Add to calendar button
             addToCalendarButton.topAnchor.constraint(equalTo: footerButton.topAnchor, constant: 20),
             addToCalendarButton.trailingAnchor.constraint(equalTo: footerButton.trailingAnchor, constant: -20),
             addToCalendarButton.widthAnchor.constraint(equalToConstant: 150),
@@ -174,20 +167,20 @@ class EventsPage: UIViewController {
     }
     
     //MARK: Button action
-   @objc private func addToCalendarTapped() {
+    @objc private func addToCalendarTapped() {
         
-       switch EKEventStore.authorizationStatus(for: .event) {
-       case .notDetermined:
-           eventStore.requestAccess(to: .event) { success, error in
-               if success, error == nil {
-                   self.presentingEventVC()
-               }
-           }
-       case .authorized:
-           presentingEventVC()
-       default:
-           break
-       }
+        switch EKEventStore.authorizationStatus(for: .event) {
+        case .notDetermined:
+            eventStore.requestAccess(to: .event) { success, error in
+                if success, error == nil {
+                    self.presentingEventVC()
+                }
+            }
+        case .authorized:
+            presentingEventVC()
+        default:
+            break
+        }
         
     }
     
@@ -219,23 +212,18 @@ class EventsPage: UIViewController {
     
     //ActionSheet function
     
-
-}
-
-//MARK: CollectionView delegate
-extension EventsPage: UICollectionViewDelegateFlowLayout {
     
 }
 
-//MARK: CollectionView DataSoure
-extension EventsPage: UICollectionViewDataSource {
+//MARK: CollectionView Delegate & DataSoure
+extension EventsPage: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return reviewModel.title.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! ReviewsCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: EventsPageIdentifier.review.rawValue, for: indexPath) as! ReviewsCell
         cell.title = reviewModel.title[indexPath.row]
         return cell
         
@@ -244,29 +232,29 @@ extension EventsPage: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
         switch kind {
-                
-            case UICollectionView.elementKindSectionHeader:
-                
-            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerIdentifier, for: indexPath) as! EventsPageHeader
+            
+        case UICollectionView.elementKindSectionHeader:
+            
+            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: EventsPageIdentifier.header.rawValue, for: indexPath) as! EventsPageHeader
             
             header.image = image
             header.name = name
             header.city = city
             
             return header
-                
-            case UICollectionView.elementKindSectionFooter:
             
-            let footer = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: footerIdentifier, for: indexPath) as! EventsPageFooter
+        case UICollectionView.elementKindSectionFooter:
+            
+            let footer = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: EventsPageIdentifier.footer.rawValue, for: indexPath) as! EventsPageFooter
             return footer
-                
-            default:
-                
-                assert(false, "Unexpected element kind")
-            }
+            
+        default:
+            
+            assert(false, "Unexpected element kind")
+        }
         
     }
-  
+    
 }
 
 //MARK: Event delegate

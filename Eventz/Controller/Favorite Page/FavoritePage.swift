@@ -12,8 +12,6 @@ class FavoritePage: UIViewController {
     //MARK: Initializer
     var collectionView: UICollectionView!
     
-    var cardsModel = FavoriteCardsModel()
-    
     let customNavigationBar = UINavigationController(navigationBarClass: CustomNavigationBar.self, toolbarClass: nil)
     
     //MARK: Proprieties
@@ -40,6 +38,7 @@ class FavoritePage: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(false)
         self.navigationController?.navigationBar.isHidden = true
+        self.vi
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -116,14 +115,14 @@ extension FavoritePage: UICollectionViewDelegateFlowLayout {
 extension FavoritePage: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return cardsModel.images.count
+        return CardsModel.favoriteEvents.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! MiniCardsCell
-        cell.image = cardsModel.images[indexPath.row]
-        cell.eventName = cardsModel.eventLabel[indexPath.row]
-        cell.city = cardsModel.cities[indexPath.row]
+        cell.image = CardsModel(rawValue: CardsModel.favoriteEvents[indexPath.row])?.rawValue
+        cell.eventName = CardsModel(rawValue: CardsModel.favoriteEvents[indexPath.row])?.eventsName
+        cell.city = CardsModel(rawValue: CardsModel.favoriteEvents[indexPath.row])?.city
         return cell
     }
     

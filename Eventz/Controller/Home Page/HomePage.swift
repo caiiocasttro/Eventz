@@ -12,21 +12,9 @@ class HomePage: UIViewController {
     //MARK: Initializer
     var collectionView: UICollectionView!
     
-    var model = cardsModel()
-    
     var cardsCell = CardsCell()
     
-    var heartDidTappedAction: (() -> ())?
-    
-    var favoriteCardsModel = FavoriteCardsModel()
-    
-    var delegate:updateFavoriteList?
-    
     //MARK: Proprieties
-    var cellIdentifier = "CardsCell"
-
-    var headerIdentifier = "HomePageHeader"
-    
     var buttonSelected = false
     
     //MARK: Page lifecycle
@@ -43,9 +31,9 @@ class HomePage: UIViewController {
         
         self.collectionView.isScrollEnabled = false
         
-        self.collectionView.register(HomePageHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerIdentifier)
+        self.collectionView.register(HomePageHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HomePageIdentifier.header.rawValue)
         
-        self.collectionView.register(CardsCell.self, forCellWithReuseIdentifier: cellIdentifier)
+        self.collectionView.register(CardsCell.self, forCellWithReuseIdentifier: HomePageIdentifier.cards.rawValue)
         
         view.addSubview(collectionView)
         
@@ -69,7 +57,7 @@ class HomePage: UIViewController {
         configureTabBar()
         
         //Background
-        view.backgroundColor = UIColor(named: "Principal6")
+        view.backgroundColor = .white
         
     }
     
@@ -100,8 +88,6 @@ class HomePage: UIViewController {
     
 }
 
-//MARK: Initializing collectionView
-
 //MARK: Collection view Delegate and DataSource
 extension HomePage: UICollectionViewDelegateFlowLayout,  UICollectionViewDataSource {
     
@@ -109,15 +95,15 @@ extension HomePage: UICollectionViewDelegateFlowLayout,  UICollectionViewDataSou
 
     //Data Source
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerIdentifier, for: indexPath) as! HomePageHeader
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HomePageIdentifier.header.rawValue, for: indexPath) as! HomePageHeader
         return header
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath ) as! CardsCell
-        cell.image = model.items[indexPath.row]
-        cell.labels = model.labels[indexPath.row]
-        cell.cities = model.cityLabels[indexPath.row]
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomePageIdentifier.cards.rawValue, for: indexPath ) as! CardsCell
+        cell.image = CardsModel(rawValue: CardsModel.events[indexPath.row])?.rawValue
+        cell.labels = CardsModel(rawValue: CardsModel.events[indexPath.row])?.eventsName
+        cell.cities = CardsModel(rawValue: CardsModel.events[indexPath.row])?.city
         
         //Setting up the button
         cell.addSubview(cell.heartButton)
@@ -129,16 +115,17 @@ extension HomePage: UICollectionViewDelegateFlowLayout,  UICollectionViewDataSou
             
             if self.buttonSelected {
                 cell.heartButton.setImage(UIImage(named: "heart-fill"), for: .normal)
+                CardsModel.favoriteEvents.append(CardsModel.events[indexPath.row])
             } else {
                 cell.heartButton.setImage(UIImage(named: "heart"), for: .normal)
+                CardsModel.favoriteEvents.removeAll { $0 == CardsModel.events[indexPath.row] }
             }
-            self.delegate?.updateList(image: cell.image!, eventName: cell.labels!, city: cell.cities!)
         }
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return model.items.count
+        return CardsModel.events.count
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

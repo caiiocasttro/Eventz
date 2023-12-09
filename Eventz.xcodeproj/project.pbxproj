@@ -12,6 +12,7 @@
 		E54CF1E42A42EF4000D1F88B /* FavoritePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54CF1E32A42EF4000D1F88B /* FavoritePage.swift */; };
 		E54CF1E62A42EF8400D1F88B /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54CF1E52A42EF8400D1F88B /* HomePage.swift */; };
 		E54CF1E82A42EF9800D1F88B /* ProfilePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54CF1E72A42EF9800D1F88B /* ProfilePage.swift */; };
+		E55A466C2B24F0D200313FDE /* Identifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55A466B2B24F0D200313FDE /* Identifiers.swift */; };
 		E567BFF02A444D4700668FE1 /* CardsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E567BFEF2A444D4700668FE1 /* CardsCell.swift */; };
 		E567BFF22A4472C300668FE1 /* HomePageHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E567BFF12A4472C200668FE1 /* HomePageHeader.swift */; };
 		E58EBF842A4DC01000DA18ED /* ReviewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58EBF832A4DC01000DA18ED /* ReviewsCell.swift */; };
@@ -23,10 +24,9 @@
 		E5A2428F2A274A0A0007A716 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5A2428E2A274A0A0007A716 /* Assets.xcassets */; };
 		E5A242922A274A0A0007A716 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5A242902A274A0A0007A716 /* LaunchScreen.storyboard */; };
 		E5C1AFD72A3CACF200FBBFE0 /* ReusableComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C1AFD62A3CACF200FBBFE0 /* ReusableComponents.swift */; };
-		E5C1AFD92A3D14C900FBBFE0 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C1AFD82A3D14C800FBBFE0 /* Protocols.swift */; };
 		E5C83A772A41FC100022D8BB /* FirstScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C83A762A41FC100022D8BB /* FirstScreen.swift */; };
 		E5E6FB412A51AAC10011C032 /* FavoritePageHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E6FB402A51AAC10011C032 /* FavoritePageHeader.swift */; };
-		E5EB0B2F2A4A05BA00B0904B /* cardsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EB0B2E2A4A05B900B0904B /* cardsModel.swift */; };
+		E5EB0B2F2A4A05BA00B0904B /* CardsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EB0B2E2A4A05B900B0904B /* CardsModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +35,7 @@
 		E54CF1E32A42EF4000D1F88B /* FavoritePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePage.swift; sourceTree = "<group>"; };
 		E54CF1E52A42EF8400D1F88B /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
 		E54CF1E72A42EF9800D1F88B /* ProfilePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePage.swift; sourceTree = "<group>"; };
+		E55A466B2B24F0D200313FDE /* Identifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiers.swift; sourceTree = "<group>"; };
 		E567BFEF2A444D4700668FE1 /* CardsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsCell.swift; sourceTree = "<group>"; };
 		E567BFF12A4472C200668FE1 /* HomePageHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageHeader.swift; sourceTree = "<group>"; };
 		E58EBF832A4DC01000DA18ED /* ReviewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsCell.swift; sourceTree = "<group>"; };
@@ -48,10 +49,9 @@
 		E5A242912A274A0A0007A716 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E5A242932A274A0A0007A716 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E5C1AFD62A3CACF200FBBFE0 /* ReusableComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableComponents.swift; sourceTree = "<group>"; };
-		E5C1AFD82A3D14C800FBBFE0 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		E5C83A762A41FC100022D8BB /* FirstScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstScreen.swift; sourceTree = "<group>"; };
 		E5E6FB402A51AAC10011C032 /* FavoritePageHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePageHeader.swift; sourceTree = "<group>"; };
-		E5EB0B2E2A4A05B900B0904B /* cardsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cardsModel.swift; sourceTree = "<group>"; };
+		E5EB0B2E2A4A05B900B0904B /* CardsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,8 +70,53 @@
 			children = (
 				E5A242852A274A070007A716 /* AppDelegate.swift */,
 				E5A242872A274A070007A716 /* SceneDelegate.swift */,
+				E5C1AFD62A3CACF200FBBFE0 /* ReusableComponents.swift */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		E55A46662B24AE5300313FDE /* Cards Model */ = {
+			isa = PBXGroup;
+			children = (
+				E5EB0B2E2A4A05B900B0904B /* CardsModel.swift */,
+			);
+			path = "Cards Model";
+			sourceTree = "<group>";
+		};
+		E55A46672B24AE6800313FDE /* Home Page */ = {
+			isa = PBXGroup;
+			children = (
+				E567BFEF2A444D4700668FE1 /* CardsCell.swift */,
+				E567BFF12A4472C200668FE1 /* HomePageHeader.swift */,
+			);
+			path = "Home Page";
+			sourceTree = "<group>";
+		};
+		E55A46682B24AF1800313FDE /* Identifiers */ = {
+			isa = PBXGroup;
+			children = (
+				E55A466B2B24F0D200313FDE /* Identifiers.swift */,
+			);
+			path = Identifiers;
+			sourceTree = "<group>";
+		};
+		E55A46692B24AF8E00313FDE /* Favorite Page */ = {
+			isa = PBXGroup;
+			children = (
+				E5E6FB402A51AAC10011C032 /* FavoritePageHeader.swift */,
+				E5305B582A51B03F0085C2FB /* MiniCardsCell.swift */,
+			);
+			path = "Favorite Page";
+			sourceTree = "<group>";
+		};
+		E55A466A2B24AFB700313FDE /* Events Page */ = {
+			isa = PBXGroup;
+			children = (
+				E58EBF832A4DC01000DA18ED /* ReviewsCell.swift */,
+				E58EBF892A4E072F00DA18ED /* EventsPageFooter.swift */,
+				E58EBF872A4DD1B000DA18ED /* EventsPageHeader.swift */,
+			);
+			path = "Events Page";
 			sourceTree = "<group>";
 		};
 		E57DD7FC2A53060000972068 /* Event page  */ = {
@@ -139,9 +184,8 @@
 		E5CFE9DA2A289D1B0027C3E1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				E5C1AFD62A3CACF200FBBFE0 /* ReusableComponents.swift */,
-				E5C1AFD82A3D14C800FBBFE0 /* Protocols.swift */,
-				E5EB0B2E2A4A05B900B0904B /* cardsModel.swift */,
+				E55A46662B24AE5300313FDE /* Cards Model */,
+				E55A46682B24AF1800313FDE /* Identifiers */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -160,13 +204,9 @@
 		E5CFE9DC2A289D320027C3E1 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				E567BFF12A4472C200668FE1 /* HomePageHeader.swift */,
-				E567BFEF2A444D4700668FE1 /* CardsCell.swift */,
-				E58EBF872A4DD1B000DA18ED /* EventsPageHeader.swift */,
-				E58EBF892A4E072F00DA18ED /* EventsPageFooter.swift */,
-				E58EBF832A4DC01000DA18ED /* ReviewsCell.swift */,
-				E5E6FB402A51AAC10011C032 /* FavoritePageHeader.swift */,
-				E5305B582A51B03F0085C2FB /* MiniCardsCell.swift */,
+				E55A46672B24AE6800313FDE /* Home Page */,
+				E55A466A2B24AFB700313FDE /* Events Page */,
+				E55A46692B24AF8E00313FDE /* Favorite Page */,
 				E5A2428E2A274A0A0007A716 /* Assets.xcassets */,
 				E5A242902A274A0A0007A716 /* LaunchScreen.storyboard */,
 			);
@@ -220,7 +260,6 @@
 			);
 			mainGroup = E5A242792A274A070007A716;
 			packageReferences = (
-				E5C1AFD12A39F69900FBBFE0 /* XCRemoteSwiftPackageReference "AlignedCollectionView" */,
 			);
 			productRefGroup = E5A242832A274A070007A716 /* Products */;
 			projectDirPath = "";
@@ -252,14 +291,14 @@
 				E5C1AFD72A3CACF200FBBFE0 /* ReusableComponents.swift in Sources */,
 				E567BFF02A444D4700668FE1 /* CardsCell.swift in Sources */,
 				E58EBF862A4DD18100DA18ED /* EventsPage.swift in Sources */,
+				E55A466C2B24F0D200313FDE /* Identifiers.swift in Sources */,
 				E54CF1E42A42EF4000D1F88B /* FavoritePage.swift in Sources */,
 				E58EBF882A4DD1B000DA18ED /* EventsPageHeader.swift in Sources */,
 				E567BFF22A4472C300668FE1 /* HomePageHeader.swift in Sources */,
-				E5EB0B2F2A4A05BA00B0904B /* cardsModel.swift in Sources */,
+				E5EB0B2F2A4A05BA00B0904B /* CardsModel.swift in Sources */,
 				E5C83A772A41FC100022D8BB /* FirstScreen.swift in Sources */,
 				E58EBF842A4DC01000DA18ED /* ReviewsCell.swift in Sources */,
 				E54CF1E02A42EF0800D1F88B /* TabBarController.swift in Sources */,
-				E5C1AFD92A3D14C900FBBFE0 /* Protocols.swift in Sources */,
 				E5A242882A274A070007A716 /* SceneDelegate.swift in Sources */,
 				E5305B592A51B03F0085C2FB /* MiniCardsCell.swift in Sources */,
 				E54CF1E82A42EF9800D1F88B /* ProfilePage.swift in Sources */,
@@ -333,7 +372,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -387,7 +426,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -405,7 +444,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 3A74NBF86H;
+				DEVELOPMENT_TEAM = YTSF56Z2B5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Eventz/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
@@ -423,9 +462,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.caiochaves.eventz;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -437,7 +479,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 3A74NBF86H;
+				DEVELOPMENT_TEAM = YTSF56Z2B5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Eventz/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
@@ -455,9 +497,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.caiochaves.eventz;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -483,17 +528,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		E5C1AFD12A39F69900FBBFE0 /* XCRemoteSwiftPackageReference "AlignedCollectionView" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Kolosowski/AlignedCollectionView?ref=iosexample.com";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = E5A2427A2A274A070007A716 /* Project object */;
 }
