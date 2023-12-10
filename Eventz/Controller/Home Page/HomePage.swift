@@ -6,13 +6,38 @@
 //
 
 import UIKit
-
+/**
+ The `HomePage` class is a UIViewController that represents the main page of the application, displaying a collection view of events.
+ 
+ ## Properties:
+ - `collectionView`: The main UICollectionView used to display events.
+ - `buttonSelected`: A boolean flag indicating whether the heart button in the collection view cells is selected.
+ 
+ ## Methods:
+ - `viewDidLoad`: Called after the controller's view is loaded into memory. It configures the collection view, registers cell types, and adds it to the view hierarchy.
+ - `configureTabBar`: Configures the appearance of the tab bar.
+ - `configureLayout`: Configures the overall layout of the home page, including the tab bar color and background color.
+ - `configureCollectionViewLayout`: Configures the layout of the collection view using compositional layout.
+ - `configuringHeaderItem`: Configures the layout of the header in the collection view.
+ 
+ ## Extensions:
+ - `UICollectionViewDelegateFlowLayout` and `UICollectionViewDataSource`: Implement methods required for the collection view delegate and data source.
+ - `viewForSupplementaryElementOfKind`: Provides the header view for the collection view.
+ - `cellForItemAt`: Provides the cell for a specific item in the collection view.
+ - `numberOfItemsInSection`: Returns the number of items in the collection view.
+ - `didSelectItemAt`: Handles the selection of a collection view cell, animates the cell, and navigates to the `EventsPage` for more details.
+ 
+ ## Usage:
+ ```
+ let homePage = HomePage()
+ navigationController?.pushViewController(homePage, animated: true)
+ ```
+ - Note: This documentation assumes the existence of `HomePageHeader`, `CardsCell`, and `CardsModel` classes or structures, as they are referenced in the code.
+ */
 class HomePage: UIViewController {
     
     //MARK: Initializer
     var collectionView: UICollectionView!
-    
-    var cardsCell = CardsCell()
     
     //MARK: Proprieties
     var buttonSelected = false
@@ -22,7 +47,7 @@ class HomePage: UIViewController {
         super.viewDidLoad()
         
         configureLayout()
-
+        
         self.collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: configureCollectionViewLayout())
         
         self.collectionView.delegate = self
@@ -36,9 +61,6 @@ class HomePage: UIViewController {
         self.collectionView.register(CardsCell.self, forCellWithReuseIdentifier: HomePageIdentifier.cards.rawValue)
         
         view.addSubview(collectionView)
-        
-        
- 
     }
     
     //MARK: Configuring Tab bar color
@@ -92,7 +114,7 @@ class HomePage: UIViewController {
 extension HomePage: UICollectionViewDelegateFlowLayout,  UICollectionViewDataSource {
     
     
-
+    
     //Data Source
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HomePageIdentifier.header.rawValue, for: indexPath) as! HomePageHeader
@@ -131,12 +153,15 @@ extension HomePage: UICollectionViewDelegateFlowLayout,  UICollectionViewDataSou
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as! CardsCell
         
-        let vc = EventsPage()
-        vc.modalPresentationStyle = .fullScreen
-        vc.image = cell.image
-        vc.name = cell.labels
-        vc.city = cell.cities
-        navigationController?.pushViewController(vc, animated: true)
+
+        
+            let vc = EventsPage()
+            vc.modalPresentationStyle = .fullScreen
+            vc.image = cell.image
+            vc.name = cell.labels
+            vc.city = cell.cities
+            self.navigationController?.pushViewController(vc, animated: true)
+        
     }
     
 }

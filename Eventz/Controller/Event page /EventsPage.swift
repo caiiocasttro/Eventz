@@ -8,7 +8,55 @@
 import UIKit
 import EventKit
 import EventKitUI
+/**
+ `EventsPage` is a UIViewController responsible for displaying details about an event, including reviews and an option to add the event to the user's calendar.
 
+ ## Properties
+ - `reviewModel`: An instance of `reviewsModel` to manage and provide data for reviews.
+ - `eventStore`: An instance of `EKEventStore` to handle calendar events.
+ - `eventVC`: An instance of `EKEventEditViewController` for presenting the event editing view.
+
+ ### Event Details Properties
+ - `image`: String representing the image of the event.
+ - `name`: String representing the name of the event.
+ - `city`: String representing the city where the event is located.
+ - `date`: String representing the date of the event.
+
+ ## UI Components
+ - `collectionView`: UICollectionView displaying reviews for the event.
+ - `plusButton`: UIBarButtonItem with an icon for additional actions.
+ - `calendarButton`: UIButton to add the event to the user's calendar.
+ - `footerButton`: UIView serving as the footer for additional actions.
+ - `line`: UIImageView displaying a line separator.
+
+ ## Lifecycle Methods
+ - `viewDidLoad()`: Configures the layout and initializes UI components.
+ - `viewWillAppear(_:)`: Adjusts the appearance before the view appears.
+ - `viewWillDisappear(_:)`: Handles actions before the view disappears.
+
+ ## UICollectionViewLayout Configuration
+ - `configureCollectionView()`: Configures the layout for the UICollectionView.
+ - `configureHeader()`: Configures the header for the UICollectionView.
+ - `configureFooter()`: Configures the footer for the UICollectionView.
+
+ ## Layout Configuration
+ - `configureLayout()`: Configures the overall layout of the view, including subviews and constraints.
+
+ ## Button Actions
+ - `addToCalendarTapped()`: Handles the action when the "Add to Calendar" button is tapped.
+ - `plusButtonDidTapped()`: Handles the action when the plusButton button is tapped.
+
+ ## Calendar Integration
+ - `presentingEventVC()`: Presents the `EKEventEditViewController` for adding the event to the calendar.
+
+ ## UICollectionViewDelegate & DataSource
+ - `collectionView(_:numberOfItemsInSection:)`: Specifies the number of items in the UICollectionView.
+ - `collectionView(_:cellForItemAt:)`: Configures and returns a cell for a specific index path.
+ - `collectionView(_:viewForSupplementaryElementOfKind:at:)`: Configures and returns header/footer views for the UICollectionView.
+
+ ## EKEventEditViewDelegate
+ - `eventEditViewController(_:didCompleteWith:)`: Handles completion events when the user interacts with the `EKEventEditViewController`.
+*/
 class EventsPage: UIViewController {
     
     //MARK: Initializers
@@ -16,7 +64,7 @@ class EventsPage: UIViewController {
     
     let eventStore = EKEventStore()
     
-    let eventVC = EKEventEditViewController()
+    
     
     //MARK: Properties
     public var image: String?
@@ -29,15 +77,27 @@ class EventsPage: UIViewController {
     
     private var collectionView: UICollectionView!
     
-    private var plusButton: UIBarButtonItem = {
+    lazy var plusButton: UIBarButtonItem = {
         let button = UIBarButtonItem()
         button.image = UIImage(named: "dots-resized")
         return button
     }()
     
-    private var addToCalendarButton = customGenericButton()
+    lazy var calendarButton: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = UIColor(named: "Pink3")
+        button.setTitle("Add to calendar", for: .normal)
+        button.layer.shadowColor = UIColor(red: 0.078, green: 0.129, blue: 0.239, alpha: 0.25).cgColor
+        button.layer.shadowRadius = 4
+        button.layer.shadowOpacity = 0.5
+        button.layer.shadowOffset = CGSize(width: 0, height: 0)
+        button.titleLabel?.font = .systemFont(ofSize: 14, weight: .heavy)
+        button.layer.cornerRadius = 25
+        button.clipsToBounds = false
+        return button
+    }()
     
-    private var footerButton: UIView = {
+    lazy var footerButton: UIView = {
         let footer = UIView()
         footer.backgroundColor = UIColor(named: "Principal6")
         footer.layer.shadowColor = UIColor(red: 0.078, green: 0.129, blue: 0.239, alpha: 0.25).cgColor
@@ -47,7 +107,7 @@ class EventsPage: UIViewController {
         return footer
     }()
     
-    private var line: UIImageView = {
+    lazy var line: UIImageView = {
         let line = UIImageView()
         line.image = UIImage(named: "Line")?.withTintColor(UIColor(named: "Aux4") ?? UIColor.lightGray)
         return line
@@ -103,11 +163,6 @@ class EventsPage: UIViewController {
         //View Background
         view.backgroundColor = UIColor(named: "Principal6")
         
-        //Add to calendar button
-        addToCalendarButton.backgroundColor = UIColor(named: "Pink3")
-        addToCalendarButton.setTitle("Add to calendar", for: .normal)
-        addToCalendarButton.layer.cornerRadius = 25
-        
         //Setting navigation bar items
         navigationController?.navigationBar.tintColor = UIColor(named: "Principal6")
         navigationItem.rightBarButtonItem = plusButton
@@ -130,11 +185,11 @@ class EventsPage: UIViewController {
         view.addSubview(collectionView)
         view.addSubview(footerButton)
         footerButton.addSubview(line)
-        footerButton.addSubview(addToCalendarButton)
+        footerButton.addSubview(calendarButton)
         
         footerButton.translatesAutoresizingMaskIntoConstraints = false
         line.translatesAutoresizingMaskIntoConstraints = false
-        addToCalendarButton.translatesAutoresizingMaskIntoConstraints = false
+        calendarButton.translatesAutoresizingMaskIntoConstraints = false
         
         
         //Adding constraints
@@ -152,15 +207,15 @@ class EventsPage: UIViewController {
             line.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             
             //Add to calendar button
-            addToCalendarButton.topAnchor.constraint(equalTo: footerButton.topAnchor, constant: 20),
-            addToCalendarButton.trailingAnchor.constraint(equalTo: footerButton.trailingAnchor, constant: -20),
-            addToCalendarButton.widthAnchor.constraint(equalToConstant: 150),
-            addToCalendarButton.heightAnchor.constraint(equalToConstant: 50)
+            calendarButton.topAnchor.constraint(equalTo: footerButton.topAnchor, constant: 20),
+            calendarButton.trailingAnchor.constraint(equalTo: footerButton.trailingAnchor, constant: -20),
+            calendarButton.widthAnchor.constraint(equalToConstant: 150),
+            calendarButton.heightAnchor.constraint(equalToConstant: 50)
             
         ])
         
         //Adding button target
-        addToCalendarButton.addTarget(self, action: #selector(addToCalendarTapped), for: .touchUpInside)
+        calendarButton.addTarget(self, action: #selector(addToCalendarTapped), for: .touchUpInside)
         plusButton.target = self
         plusButton.action = #selector(plusButtonDidTapped)
         
@@ -169,11 +224,21 @@ class EventsPage: UIViewController {
     //MARK: Button action
     @objc private func addToCalendarTapped() {
         
+        print("tapped")
         switch EKEventStore.authorizationStatus(for: .event) {
         case .notDetermined:
-            eventStore.requestAccess(to: .event) { success, error in
-                if success, error == nil {
-                    self.presentingEventVC()
+        
+            if #available(iOS 17.0, *) {
+                eventStore.requestFullAccessToEvents { success, error in
+                    if success, error == nil {
+                        self.presentingEventVC()
+                    }
+                }
+            } else {
+                eventStore.requestAccess(to: .event) { (granted, error) in
+                    if granted, error == nil {
+                        self.presentingEventVC()
+                    }
                 }
             }
         case .authorized:
@@ -198,20 +263,22 @@ class EventsPage: UIViewController {
     
     //Presenting EventVC function
     private func presentingEventVC() {
-        eventVC.editViewDelegate = self
-        eventVC.eventStore = EKEventStore()
         
-        let newEvent = EKEvent(eventStore: eventVC.eventStore)
-        newEvent.title = name
-        newEvent.location = city
-        newEvent.startDate = Date()
+        DispatchQueue.main.async { [weak self] in
+            let eventVC = EKEventEditViewController()
+            eventVC.editViewDelegate = self
+            eventVC.eventStore = EKEventStore()
+            
+            let newEvent = EKEvent(eventStore: eventVC.eventStore)
+            newEvent.title = self?.name
+            newEvent.location = self?.city
+            newEvent.startDate = Date()
+            
+            eventVC.event = newEvent
+            self?.present(eventVC, animated: true)
+        }
         
-        eventVC.event = newEvent
-        self.present(eventVC, animated: true)
     }
-    
-    //ActionSheet function
-    
     
 }
 
@@ -262,7 +329,7 @@ extension EventsPage: EKEventEditViewDelegate {
     func eventEditViewController(_ controller: EKEventEditViewController, didCompleteWith action: EKEventEditViewAction) {
         if action == EKEventEditViewAction.saved {
             controller.dismiss(animated: true)
-            self.addToCalendarButton.setTitle("Event saved", for: .normal)
+            self.calendarButton.setTitle("Event saved", for: .normal)
         } else {
             controller.dismiss(animated: true)
         }

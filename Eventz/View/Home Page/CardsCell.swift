@@ -253,6 +253,17 @@ class CardsCell: UICollectionViewCell {
     @objc public func heartDidTapped() {
         
         heartDidTappedAction?()
+        heartButtonAnimation()
+    }
+    
+    //MARK: Animation
+    func heartButtonAnimation() {
+        
+        heartButton.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
+        
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.3, initialSpringVelocity: 0.1, options: [.curveLinear]) {
+            self.heartButton.transform = .identity
+        }
         
     }
     

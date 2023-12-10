@@ -56,20 +56,27 @@ enum CardsModel: String {
         }
     }
     
+    //TODO: Finish imlplementation
+    var date: String {
+        switch self {
+        case .concert:
+            return "2024-02-25T20:00:00"
+        case .fashion:
+            return "2024-05-05T19:00:00"
+        case .exhibition:
+            return "2024-03-12T18:00:00"
+        case .exposition:
+            return "2023-12-18T12:00:00"
+        case .wineTasting:
+            return "2023-12-25T21:00:00"
+        case .colorsFestival:
+            return "2024-06-20T21:00:00"
+        }
+    }
+    
 }
 
 struct reviewsModel {
     
     public var title: [String] = ["Amazing!", "Finally :)", "Soooo great!"]
 }
-
-//struct FavoriteCardsModel {
-//
-//    
-//    public var images: [String] = ["exposition", "wine-tasting", "color-festival"]
-//    
-//    public var eventLabel: [String] = ["Exposition", "Wine tasting", "Colors festival"]
-//    
-//    public var cities: [String] = [ "Lausanne, Switzerland", "Lutry, Switzerland", "Morges, Switzerland"]
-//    
-//}

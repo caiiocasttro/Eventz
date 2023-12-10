@@ -209,6 +209,7 @@ class EventsPageHeader: UICollectionReusableView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureLayout()
+        
     }
     
     required init?(coder: NSCoder) {
@@ -332,8 +333,10 @@ class EventsPageHeader: UICollectionReusableView {
          
          shadow.settingShadow(object: mapShadow)
          
+         
          //Calling map function
          settingLocation()
+         
          
          //Button target
          heartButton.addTarget(self, action: #selector(heartDidTapped), for: .touchUpInside)
@@ -398,13 +401,36 @@ class EventsPageHeader: UICollectionReusableView {
     //MARK: Button action
     @objc private func heartDidTapped() {
         
+        heartButtonAnimation()
+        
         self.buttonSelected = !self.buttonSelected
 
         if buttonSelected {
             heartButton.setImage(UIImage(named: "heart-solid")?.withTintColor(UIColor(named: "HeartColor") ?? UIColor.gray), for: .normal)
+            CardsModel.favoriteEvents.append(image!)
         } else {
             heartButton.setImage(UIImage(named: "heart-solid")?.withTintColor(UIColor(named: "Aux3") ?? UIColor.gray), for: .normal)
+            CardsModel.favoriteEvents.removeAll { $0 == image! }
         }
+    }
+    
+    func checkingHeartButtonStatus() {
+        
+        if CardsModel.favoriteEvents.contains(image!) {
+            self.buttonSelected = true
+        }
+        
+    }
+    
+    //MARK: Animation
+    func heartButtonAnimation() {
+        
+        heartButton.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
+        
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.3, initialSpringVelocity: 0.1, options: [.curveLinear]) {
+            self.heartButton.transform = .identity
+        }
+        
     }
     
 }

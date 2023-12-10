@@ -38,7 +38,7 @@ class FavoritePage: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(false)
         self.navigationController?.navigationBar.isHidden = true
-        self.vi
+        self.collectionView.reloadData()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
